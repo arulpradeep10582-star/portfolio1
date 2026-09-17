@@ -1,0 +1,864 @@
+```css
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, #321000, transparent 30%),
+        radial-gradient(circle at 80% 80%, #001c32, transparent 30%),
+        #050505;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 100, 0, 0.3);
+}
+
+nav {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    height: 75px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px orange,
+        0 0 25px orange;
+}
+
+.logo span {
+    color: #ff6500;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+
+    transition: 0.4s;
+}
+
+nav ul li a:hover {
+    color: #ff6500;
+
+    text-shadow:
+        0 0 10px orange,
+        0 0 20px orange;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 120px 8% 50px;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 650px;
+
+    animation: heroIn 1.5s ease;
+}
+
+.small-title {
+    color: #00bfff;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+    animation: pulse 2s infinite;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #ff6500;
+
+    text-shadow:
+        0 0 10px #ff6500,
+        0 0 30px #ff6500,
+        0 0 60px #ff3000;
+
+    animation: fire 2s infinite alternate;
+}
+
+.hero h2 {
+    color: #00bfff;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.college {
+    font-size: 14px;
+
+    color: #ddd;
+
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #aaa;
+
+    line-height: 1.8;
+
+    max-width: 600px;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    text-decoration: none;
+
+    color: white;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #ff3000,
+        #ff8c00
+    );
+
+    box-shadow:
+        0 0 15px rgba(255, 80, 0, 0.7);
+
+    transition: 0.4s;
+}
+
+.btn:hover {
+    transform: translateY(-7px) scale(1.05);
+
+    box-shadow:
+        0 0 20px orange,
+        0 0 50px orange;
+}
+
+.btn.second {
+    background: transparent;
+
+    border: 1px solid #00bfff;
+
+    box-shadow:
+        0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+
+/* =========================
+   CHAKRA ORB
+========================= */
+
+.chakra-container {
+    width: 360px;
+    height: 360px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chakra {
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 80px;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff,
+            #00bfff 25%,
+            #0066ff 50%,
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 20px #00bfff,
+        0 0 50px #008cff,
+        0 0 100px #0066ff;
+
+    animation:
+        chakraSpin 5s linear infinite,
+        chakraPulse 2s ease-in-out infinite;
+}
+
+.chakra-ring {
+    position: absolute;
+
+    border: 2px solid #ff6500;
+
+    border-radius: 50%;
+}
+
+.ring1 {
+    width: 280px;
+    height: 280px;
+
+    animation: ringSpin 8s linear infinite;
+}
+
+.ring2 {
+    width: 340px;
+    height: 340px;
+
+    border-color: #00bfff;
+
+    animation:
+        ringSpinReverse 12s linear infinite;
+}
+
+.chakra-text {
+    position: absolute;
+
+    bottom: -25px;
+
+    color: #ff6500;
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    min-height: 70vh;
+
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    color: #ff6500;
+
+    text-shadow: 0 0 20px orange;
+}
+
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass-card {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: flex;
+
+    gap: 30px;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 100, 0, 0.3);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 30px rgba(255, 80, 0, 0.1);
+
+    transition: 0.5s;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 0 30px rgba(255, 80, 0, 0.5);
+}
+
+.card-icon {
+    font-size: 60px;
+}
+
+.glass-card h3 {
+    color: #ff6500;
+
+    margin-bottom: 15px;
+}
+
+.glass-card p {
+    color: #bbb;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+.quote {
+    color: #00bfff !important;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-container {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.skill-card {
+    padding: 25px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(0,191,255,0.2);
+
+    border-radius: 18px;
+
+    transition: 0.4s;
+}
+
+.skill-card:hover {
+    transform: scale(1.04);
+
+    border-color: #00bfff;
+
+    box-shadow:
+        0 0 25px rgba(0,191,255,0.4);
+}
+
+.skill-card h3 {
+    margin-bottom: 15px;
+
+    color: #00bfff;
+}
+
+.bar {
+    height: 8px;
+
+    background: #222;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+
+    width: 0;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3000,
+            #ff9900,
+            #00bfff
+        );
+
+    animation: skillLoad 2s forwards;
+}
+
+.html {
+    --skill: 90%;
+}
+
+.css {
+    --skill: 85%;
+}
+
+.js {
+    --skill: 70%;
+}
+
+.c {
+    --skill: 75%;
+}
+
+.python {
+    --skill: 65%;
+}
+
+.electronics {
+    --skill: 70%;
+}
+
+.skill-card span {
+    display: block;
+
+    text-align: right;
+
+    margin-top: 8px;
+
+    color: #aaa;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.project-card {
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,80,0,0.08),
+            rgba(0,150,255,0.05)
+        );
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.5s;
+}
+
+.project-card:hover {
+    transform:
+        translateY(-15px)
+        rotateX(5deg);
+
+    box-shadow:
+        0 20px 40px rgba(255,80,0,0.25);
+}
+
+.project-symbol {
+    font-size: 50px;
+
+    margin-bottom: 20px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+.project-card h3 {
+    color: #ff6500;
+
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #aaa;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    color: #00bfff;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+
+    padding: 120px 20px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,70,0,0.15),
+            transparent 60%
+        );
+}
+
+.contact h2 {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.contact span {
+    color: #ff6500;
+
+    text-shadow: 0 0 20px orange;
+}
+
+.contact p {
+    color: #aaa;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    border-top: 1px solid rgba(255,100,0,0.2);
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles span {
+    position: fixed;
+
+    width: 5px;
+    height: 5px;
+
+    background: #ff6500;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px orange;
+
+    animation: particles 10s linear infinite;
+
+    z-index: -1;
+}
+
+.particles span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particles span:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(3) {
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(4) {
+    left: 40%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(5) {
+    left: 50%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(6) {
+    left: 60%;
+    animation-delay: 5s;
+}
+
+.particles span:nth-child(7) {
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(8) {
+    left: 80%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(9) {
+    left: 90%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(10) {
+    left: 95%;
+    animation-delay: 6s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heroIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fire {
+
+    from {
+        text-shadow:
+            0 0 10px orange;
+    }
+
+    to {
+        text-shadow:
+            0 0 15px orange,
+            0 0 40px red,
+            0 0 70px orange;
+    }
+}
+
+@keyframes pulse {
+
+    0%,100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes chakraSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes chakraPulse {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes ringSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ringSpinReverse {
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes particles {
+
+    from {
+        transform:
+            translateY(110vh)
+            scale(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-10vh)
+            scale(1.5);
+    }
+}
+
+@keyframes skillLoad {
+
+    to {
+        width: var(--skill);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 140px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .chakra-container {
+        margin-top: 80px;
+
+        transform: scale(0.75);
+    }
+
+    .buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .glass-card {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+}
+```
